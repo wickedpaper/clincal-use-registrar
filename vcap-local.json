@@ -1,0 +1,18 @@
+{
+  "services": {
+    "cloudantNoSQLDB": [
+      {
+        "name": "DESC-db",
+        "label": "cloudantNoSQLDB",
+        "plan": "Lite",
+        "credentials": {
+  "username": "830204f9-6883-4181-ba8c-56af52b7404f-bluemix",
+  "password": "b115337fbc1608242c16b4eec4f4d22ca540b3cf28cd57da83b9114aed1185fd",
+  "host": "830204f9-6883-4181-ba8c-56af52b7404f-bluemix.cloudant.com",
+  "port": 443,
+  "url": "https://830204f9-6883-4181-ba8c-56af52b7404f-bluemix:b115337fbc1608242c16b4eec4f4d22ca540b3cf28cd57da83b9114aed1185fd@830204f9-6883-4181-ba8c-56af52b7404f-bluemix.cloudant.com"
+}
+      }
+    ]
+  }
+}
