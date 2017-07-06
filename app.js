@@ -24,7 +24,7 @@ if (appEnv.isLocal) {
 }
 try {
 	cloudantService = appEnv.services.cloudantNoSQLDB[0];
-  catalog_url = process.env.CATALOG_URL;
+  desc_url = process.env.DESC_URL;
 }
 catch (e) {
 	console.error("Error looking up service: ", e);
