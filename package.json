@@ -1,7 +1,7 @@
 {
-  "name": "insurance-orders",
+  "name": "registrardemo",
   "version": "0.0.1",
-  "description": "A Node.js app for interacting with insurance orders.",
+  "description": "A Node.js app for interacting with visit orders.",
   "scripts": {
     "start": "node app.js"
   },
@@ -33,7 +33,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/IBM-Bluemix/insurance-orders.git"
+    "url": "https://github.com/wickedpaper/repo-1001-clinical-use-registrar.git"
   },
   "engines": {
     "node": "4.4.x"
