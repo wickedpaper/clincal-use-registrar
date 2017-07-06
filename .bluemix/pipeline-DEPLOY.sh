@@ -11,7 +11,7 @@ echo "Using manifest file: $MANIFEST"
 echo "Using prefix: $PREFIX"
 
 # Create CF services
-cf create-service cloudantNoSQLDB Lite ${PREFIX}insurance-policy-db
+cf create-service cloudantNoSQLDB Lite ${PREFIX}DESC-db
 # Set app's env vars
 domain=".mybluemix.net"
 case "${REGION_ID}" in
@@ -41,7 +41,7 @@ else
   trap rollback ERR
   cf rename $CF_APP $OLD_CF_APP
   cf push $CF_APP -n $CF_APP -f $MANIFEST --no-start
-  cf set-env $CF_APP CATALOG_URL https://$CATALOG_APP_NAME$domain
+  cf set-env $CF_APP DESC_URL https://$DESC_APP_NAME$domain
   cf start $CF_APP
   cf delete $OLD_CF_APP -f
 fi
