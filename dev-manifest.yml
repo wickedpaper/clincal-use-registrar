@@ -1,7 +1,7 @@
 ---
 applications:
-- name: dev-insurance-orders
-  host: dev-insurance-orders
+- name: dev-Registrar-app
+  host: dev-Registrar-app
   memory: 128M
   services:
-  - dev-insurance-policy-db
+  - dev-DESC-db
