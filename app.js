@@ -7,9 +7,6 @@ var path = require('path');
 var cors = require('cors');
 var appEnv = cfenv.getAppEnv();
 
-//---Deployment Tracker---------------------------------------------------------
-require("cf-deployment-tracker-client").track();
-
 // Setup the required environment variables
 var vcapLocal = null;
 try {
@@ -27,7 +24,7 @@ if (appEnv.isLocal) {
 }
 try {
 	cloudantService = appEnv.services.cloudantNoSQLDB[0];
-  catalog_url = process.env.CATALOG_URL;
+  desc_url = process.env.DESC_URL;
 }
 catch (e) {
 	console.error("Error looking up service: ", e);
@@ -41,7 +38,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'www')));
 
 //REST HTTP Methods
-var orders = require('./routes/orders');
+var  = require('./routes/orders');
 app.get('/orders', orders.list);
 app.get('/orders/:id', orders.find);
 app.post('/orders', orders.create);

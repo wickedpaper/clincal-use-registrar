@@ -9,7 +9,7 @@ var cloudant = require('cloudant')({
 var request = require('request');
 
 console.log("Cloudant is", cloudantService);
-console.log("Catalog URL is", catalog_url);
+console.log("DESC URL is", desc_url);
 
 //Initiate the database.
 cloudant.db.create('orders', function(err/*, body*/) {
@@ -24,23 +24,23 @@ var ordersDb = cloudant.use('orders');
 
 /* add an order to the database */
 exports.create = function(req, res) {
-    request.get(catalog_url + '/policies', function (err, response) {
+    request.get(catalog_url + '/desc', function (err, response) {
         if (err)
             return res.status(500).send({msg: 'Error on insert, unable to verify order validity: ' + err});
 
         // Make sure policy with ID exists
-        var policies = JSON.parse(response.body).rows,
-            validPolicy = false;
-        for (var i=0; i < policies.length; i++) {
-            if (policies[i].id === req.body.itemid) {
-                validPolicy = true;
+        var desc = JSON.parse(response.body).rows,
+            validDesc = false;
+        for (var i=0; i < desc.length; i++) {
+            if (desc[i].id === req.body.itemid) {
+                validDesc = true;
                 break;
             }
         }
 
         // If invalid policy, return error
-        if (!validPolicy)
-            return res.status(422).send({msg: 'Order request not completed due to invalid policy ID'});
+        if (!validDesc)
+            return res.status(422).send({msg: 'Order request not completed due to invalid desc ID'});
 
         // Create order in the DB
         ordersDb.insert(req.body, function(err) {
