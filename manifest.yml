@@ -2,6 +2,6 @@
 applications:
 - name: registrar-app
   host: registrar-app
-  memory: 128M
+  memory: 512M
   services:
   - DESC-db
